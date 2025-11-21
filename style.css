@@ -81,3 +81,56 @@ footer {
     margin-top: 40px;
 }
 
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
+
+.section img {
+    transition: 0.4s ease;
+}
+
+.section img:hover {
+    transform: scale(1.02);
+}
+
+btn {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.section {
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.small-img {
+    width: 80%;
+    border-radius: 10px;
+    margin: 20px auto;
+    display: block;
+}
+
+.tiny-img {
+    width: 31%;
+    border-radius: 10px;
+}
+
+.image-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
