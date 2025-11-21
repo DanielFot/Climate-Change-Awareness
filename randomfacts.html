@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Climate Facts</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* FACT BOX STYLE */
+        .fact-box {
+            background: #1e8449;
+            color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 700px;
+            margin: 20px auto;
+            font-size: 1.2rem;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .new-fact-btn {
+            background: #f39c12;
+            padding: 12px 22px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        .new-fact-btn:hover {
+            background: #e67e22;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(10px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo.svg" alt="Site Logo" class="logo">
+    <h1>Random Climate Facts</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="causes.html">Causes</a>
+    <a href="effects.html">Effects</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="projects.html">Projects</a>
+    <a href="faq.html">FAQ</a>
+    <a href="randomfacts.html">Random Facts</a>
+</nav>
+
+<div class="section">
+    <h2>Discover Interesting Climate Facts</h2>
+
+    <p>
+        Click the button below to learn a new fact about climate change.
+        Each fact is scientifically accurate and helps build awareness about our planet.
+    </p>
+
+    <div id="fact-box" class="fact-box">
+        🌎 Click the button to generate your first climate fact!
+    </div>
+
+    <div style="text-align:center;">
+        <button class="new-fact-btn" onclick="newFact()">Generate Random Fact</button>
+    </div>
+</div>
+
+<footer>
+    <p>Knowledge inspires action.</p>
+</footer>
+
+<script>
+    const climateFacts = [
+        "The last 10 years were the hottest decade ever recorded.",
+        "Arctic sea ice is shrinking at 13% per decade.",
+        "Human activity is responsible for more than 75% of greenhouse gas emissions.",
+        "The ocean absorbs over 90% of the excess heat trapped by greenhouse gases.",
+        "CO₂ levels are now the highest they've been in over 3 million years.",
+        "Every year, 10 million hectares of forests are lost—an area the size of Iceland.",
+        "More than 1 million animal and plant species are at risk of extinction.",
+        "Sea levels have risen about 20 cm since the year 1900.",
+        "Climate change increases the intensity of hurricanes and tropical storms.",
+        "Melting glaciers supply drinking water to over 1 billion people—and they’re disappearing.",
+        "Extreme weather events caused over $250 billion in global damage last year.",
+        "Heatwaves are now 5 times more likely because of human-caused climate change.",
+        "Methane is over 28 times more powerful than CO₂ at trapping heat.",
+        "The Amazon Rainforest is now emitting more carbon than it absorbs in some regions.",
+        "Ocean acidity has increased by 26% since the Industrial Revolution.",
+        "Air pollution from fossil fuels kills over 7 million people every year."
+    ];
+
+    function newFact() {
+        const randomIndex = Math.floor(Math.random() * climateFacts.length);
+        const fact = climateFacts[randomIndex];
+
+        const box = document.getElementById("fact-box");
+        box.style.animation = "none";         // restart animation
+        void box.offsetWidth;                 // trigger reflow
+        box.style.animation = "fadeIn 0.5s";  // apply again
+        box.textContent = "• " + fact;
+    }
+</script>
+
+</body>
+</html>
